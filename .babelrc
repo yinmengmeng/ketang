@@ -1,0 +1,4 @@
+{
+    "presets": ["es2015", "stage-0", "react"], //es6,es7,react
+    "plugins": ["transform-decorators-legacy"]
+}

@@ -1,6 +1,7 @@
 import * as Types from "../action-types";
 let initState = {
-    currentLesson: "all"
+    currentLesson: "all",
+    sliders: []
 };
 let homeReducer = (state = initState, action) => {
     switch (action.type) {
@@ -8,6 +9,11 @@ let homeReducer = (state = initState, action) => {
             return {
                 ...state,
                 currentLesson: action.lesson
+            };
+        case Types.SET_SLIDERS:
+            return {
+                ...state,
+                sliders: action.payload
             };
         default:
             return state;

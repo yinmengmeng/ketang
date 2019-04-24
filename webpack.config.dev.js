@@ -26,7 +26,12 @@ module.exports = {
     devtool: "source-map",
     plugins: [
         new htmlWebpackPlugin({
-            template: "./index.html"
+            template: "./public/index.html"
         })
-    ]
+    ],
+    resolve: {
+        alias: {
+            "@": path.resolve("src")
+        }
+    }
 };

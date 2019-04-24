@@ -28,11 +28,15 @@ export default class HomeHeader extends Component {
             menuShow: !this.state.menuShow
         });
     };
+    changeType = e => {
+        this.props.selectCurrentLesson(e.target.dataset.type);
+        this.handleChangeShow();
+    };
     render() {
         let menuShow = this.state.menuShow;
         let menuList = (
             <Transition
-                in={this.state.menuShow}
+                in={menuShow}
                 timeout={duration}
                 onEnter={node => {
                     node.style.display = "block";
@@ -46,16 +50,15 @@ export default class HomeHeader extends Component {
                             ...defaultStyle,
                             ...transitionStyles[state]
                         }}>
-                        <ul className="header-menu">
-                            <li>全部课程</li>
-                            <li>React课程</li>
-                            <li>Vue课程</li>
+                        <ul className="header-menu" onClick={this.changeType}>
+                            <li data-type="all">全部课程</li>
+                            <li data-type="react">React课程</li>
+                            <li data-type="vue">Vue课程</li>
                         </ul>
                     </div>
                 )}
             </Transition>
         );
-        console.log(menuShow);
         return (
             <div className="home-header">
                 <div className="header-logo">

@@ -11,15 +11,19 @@ import Home from "./containers/Home/Home";
 import Profile from "./containers/Profile/Profile";
 import Lesson from "./containers/Lesson/Lesson";
 import "./common/reset.less";
+import store from "./store";
+import { Provider } from "react-redux";
 ReactDOM.render(
-    <Router>
-        <App>
-            <Switch>
-                <Route path="/" exact={true} component={Home} />
-                <Route path="/profile" component={Profile} />
-                <Route path="/lesson" component={Lesson} />
-            </Switch>
-        </App>
-    </Router>,
+    <Provider store={store}>
+        <Router>
+            <App>
+                <Switch>
+                    <Route path="/" exact={true} component={Home} />
+                    <Route path="/profile" component={Profile} />
+                    <Route path="/lesson" component={Lesson} />
+                </Switch>
+            </App>
+        </Router>
+    </Provider>,
     document.querySelector("#root")
 );

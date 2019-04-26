@@ -34,7 +34,7 @@ app.get("/sliders", function(request, response) {
 //获取课程接口
 //offsset 从第几条开始取
 //limit 每次取多少条
-app.get("/lesson/:offset/:limit/:type", (req, res, next) => {
+app.get("/lessons/:offset/:limit/:type", (req, res, next) => {
     let { offset, limit, type } = req.params;
     let lists = JSON.parse(JSON.stringify(lessons));
     if (type !== "all") {

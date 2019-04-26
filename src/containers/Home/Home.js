@@ -30,6 +30,9 @@ export default class Home extends Component {
             //优化，防止每次切页面的时候都会重新请求数据
             this.props.getSlidersAPI();
         }
+        if (this.props.lesson.list.length === 0) {
+            this.props.getLessonsAPI();
+        }
     }
     render() {
         let { sliders } = this.props;
@@ -37,12 +40,12 @@ export default class Home extends Component {
             <div>
                 <HomeHeader selectCurrentLesson={this.selectCurrentLesson} />
                 <div className="content">
+                    {/* 如果不加这个判断，sliders初始值是[]，会在行间属性上加个with：0，导致后面sliders即使有数据也不会再加载出来 */}
                     {sliders.length ? (
                         <HomeSlider lists={sliders} />
                     ) : (
                         <Loading />
                     )}
-                    {/* 如果不加这个判断，sliders初始值是[]，会在行间属性上加个with：0，导致后面sliders即使有数据也不会再加载出来 */}
                 </div>
             </div>
         );

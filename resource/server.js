@@ -1,6 +1,7 @@
 let express = require("express");
 let axios = require("axios");
 let app = express();
+let lessons = require("./mock/lessons");
 app.listen(3000, () => {
     console.log("server listen port 3000");
 });
@@ -29,4 +30,21 @@ app.get("/sliders", function(request, response) {
                 res.data.moduleDTOList.list[0].moduleMap.map.pictureDTOList.list
             );
         });
+});
+//获取课程接口
+//offsset 从第几条开始取
+//limit 每次取多少条
+app.get("/lesson/:offset/:limit/:type", (req, res, next) => {
+    let { offset, limit, type } = req.params;
+    let lists = JSON.parse(JSON.stringify(lessons));
+    if (type !== "all") {
+        lists = lists.filter((item, index) => {
+            return item.type === type;
+        });
+    }
+    offset = parseInt(offset);
+    limit = parseInt(limit);
+    let newAry = lists.slice(offset, offset + limit);
+    let hasMore = offset + limit >= lists.length ? false : true;
+    res.json({ hasMore, list: newAry });
 });

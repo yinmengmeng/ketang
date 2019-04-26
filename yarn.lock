@@ -3378,11 +3378,6 @@ locate-path@^3.0.0:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
 
-lodash.isequal@^4.5.0:
-  version "4.5.0"
-  resolved "http://registry.npm.taobao.org/lodash.isequal/download/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
-  integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
-
 lodash@^4.17.11, lodash@^4.17.3:
   version "4.17.11"
   resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
@@ -4436,14 +4431,14 @@ react-router@5.0.0:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-swipe@^6.0.4:
-  version "6.0.4"
-  resolved "http://registry.npm.taobao.org/react-swipe/download/react-swipe-6.0.4.tgz#76e53599b1a093d5a3a841c7f391ef0abcc1babb"
-  integrity sha1-duU1mbGgk9WjqEHH85HvCrzBurs=
+react-swipe@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.npm.taobao.org/react-swipe/download/react-swipe-5.1.1.tgz#5aeb08afc5efec13507aed6e5841360821e9f0d1"
+  integrity sha1-WusIr8Xv7BNQeu1uWEE2CCHp8NE=
   dependencies:
-    lodash.isequal "^4.5.0"
+    object-assign "^4.1.1"
     prop-types "^15.6.0"
-    swipe-js-iso "^2.1.5"
+    swipe-js-iso "^2.0.4"
 
 react-transition-group@^4.0.0:
   version "4.0.0"
@@ -5166,9 +5161,14 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
-swipe-js-iso@^2.1.5:
+swipe-js-iso@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.npm.taobao.org/swipe-js-iso/download/swipe-js-iso-2.0.4.tgz#3371608112b30182e898f61d5bc02f7e38099c3d"
+  integrity sha1-M3FggRKzAYLomPYdW8AvfjgJnD0=
+
+swipe-js-iso@^2.0.4:
   version "2.1.5"
-  resolved "http://registry.npm.taobao.org/swipe-js-iso/download/swipe-js-iso-2.1.5.tgz#9b0eea8b9740487e6169d655184fc6440b6a2e34"
+  resolved "https://registry.npm.taobao.org/swipe-js-iso/download/swipe-js-iso-2.1.5.tgz#9b0eea8b9740487e6169d655184fc6440b6a2e34"
   integrity sha1-mw7qi5dASH5hadZVGE/GRAtqLjQ=
 
 symbol-observable@^1.2.0:

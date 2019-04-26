@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import actions from "@/store/actions/home";
 import HomeSlider from "./HomeSlider";
 import Loading from "@/components/Loading/Loading";
+import HomeList from "./HomeList";
 
 //装饰器"@" 见阮一峰Decorator部分 装饰类的，不能装饰函数，因为函数会变量提升 say装饰的A，相当于把A传到say里执行
 
@@ -35,7 +36,10 @@ export default class Home extends Component {
         }
     }
     render() {
-        let { sliders } = this.props;
+        let {
+            sliders,
+            lesson: { list }
+        } = this.props;
         return (
             <div>
                 <HomeHeader selectCurrentLesson={this.selectCurrentLesson} />
@@ -46,6 +50,11 @@ export default class Home extends Component {
                     ) : (
                         <Loading />
                     )}
+                    <h2 className="home-title">
+                        <i className="iconfont icon-course" />
+                        <span>我的课程</span>
+                    </h2>
+                    <HomeList lists={list} />
                 </div>
             </div>
         );
